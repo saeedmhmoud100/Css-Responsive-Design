@@ -8,7 +8,7 @@
 body{background-color: #eee;}
 .container{
     background-image: linear-gradient(to bottom right,rgb(57, 110, 214),rgb(211, 67, 211));
-    /* height: 100vh; */
+    height: 1237px;
     width: 95%;
     margin: 20px auto;
     padding: 5px;
@@ -24,7 +24,7 @@ h1{
 }
 .grid{
     display: grid;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(1,1fr);
     grid-template-rows: repeat(6,1fr);
     gap: 10px 0;
 }
@@ -35,6 +35,30 @@ h1{
     display: flex;
     align-items: center;
     font-size: 35px;
-    grid-column: span 12 ;
     padding: 50px;
 }
+
+@media (min-width:610px) {
+    h1{margin: 2px 0;}
+    .container{height: 900px;}
+    .grid{
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 100px 80px 300px 100px 90px
+    }
+
+    .grid > div{padding: 10px}
+    
+    .header{
+        grid-area:1/1/2/13
+    }
+    .ad{
+        grid-area:2/1/3/13; 
+    }
+    .main{
+    grid-area: 3/1/4/13;
+    }
+    .footer{
+    grid-area: 5/1/6/3;
+}
+}
+
